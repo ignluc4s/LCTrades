@@ -1,0 +1,22 @@
+name: LCTrades
+main: com.lctrades.LCTrades
+version: 1.0.0
+api-version: '1.21'
+author: ignLuc4s
+
+description: A comprehensive player-to-player trading plugin
+
+commands:
+  trade:
+    description: Main trade command
+    usage: /<command> [player|accept|deny|toggle]
+    aliases: [t]
+    permission: lctrades.use
+
+permissions:
+  lctrades.use:
+    description: Allows use of the trade command
+    default: true
+  lctrades.admin:
+    description: Allows admin commands
+    default: op
