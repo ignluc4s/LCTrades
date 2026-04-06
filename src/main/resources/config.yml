@@ -1,0 +1,118 @@
+# ==========================================
+# LCTrades Configuration
+# ==========================================
+
+# GUI Settings
+gui:
+  # Title of the trade GUI (supports color codes with &)
+  title: "&a&lTrade Request"
+  # Title when in active trade
+  active-trade-title: "&6&lTrading with &e%player%"
+  # Size of the GUI (must be multiple of 9, max 54)
+  size: 54
+  
+  # Divider item (separates the two players' sides)
+  divider:
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+    lore: []
+  
+  # Confirm button when not ready
+  confirm-not-ready:
+    material: RED_WOOL
+    name: "&c&lNOT READY"
+    lore:
+      - "&7Click to confirm your trade"
+  
+  # Confirm button when ready
+  confirm-ready:
+    material: LIME_WOOL
+    name: "&a&lREADY"
+    lore:
+      - "&7Waiting for other player..."
+  
+  # Status item (shows trade status)
+  status-item:
+    material: CLOCK
+    name: "&e&lTrade Status"
+    lore:
+      - "&7You: %your_status%"
+      - "&7Them: %their_status%"
+
+# Trade Settings
+trade:
+  # Request timeout in seconds
+  request-timeout: 60
+  # Trade distance limit (-1 for unlimited)
+  max-distance: 10
+  # Countdown duration in seconds
+  countdown: 3
+  # Allow trading in different worlds
+  cross-world: false
+  # Worlds where trading is disabled
+  disabled-worlds:
+    - "world_nether"
+    - "world_the_end"
+
+# Messages (supports color codes with &)
+messages:
+  prefix: "&8[&aLCTrades&8] &r"
+  
+  # Trade Request Messages
+  request-sent: "&aTrade request sent to &e%player%&a!"
+  request-received: "&e%player% &awants to trade with you!"
+  request-expired: "&cYour trade request to &e%player% &chas expired."
+  request-expired-target: "&cTrade request from &e%player% &chas expired."
+  no-pending-request: "&cYou don't have any pending trade requests."
+  no-request-from: "&cYou don't have a trade request from that player."
+  
+  # Trade Status Messages
+  request-accepted: "&aTrade request accepted! Opening trade GUI..."
+  request-denied: "&cTrade request denied."
+  request-denied-sender: "&e%player% &chas denied your trade request."
+  request-cancelled: "&cTrade request cancelled."
+  already-trading: "&cYou are already in a trade!"
+  target-already-trading: "&e%player% &cis already in a trade!"
+  player-offline: "&cThat player is no longer online."
+  self-trade: "&cYou cannot trade with yourself!"
+  no-permission: "&cYou don't have permission to use this command."
+  
+  # Trade Process Messages
+  trade-cancelled: "&cTrade cancelled."
+  trade-cancelled-distance: "&cTrade cancelled - you moved too far apart!"
+  trade-cancelled-world: "&cTrade cancelled - you are in different worlds!"
+  player-readied: "&aYou are ready!"
+  both-readied: "&aBoth players ready! Trade completing in &e%seconds% &aseconds..."
+  trade-complete: "&aTrade completed successfully!"
+  inventory-full: "&cYour inventory is full! Trade cancelled."
+  target-inventory-full: "&e%player%&c's inventory is full! Trade cancelled."
+  
+  # GUI Messages
+  not-your-slot: "&cYou cannot place items in the other player's side!"
+  cannot-modify: "&cYou cannot modify items while ready!"
+  click-to-confirm: "&aClick to confirm your trade"
+  click-to-unconfirm: "&cClick to unconfirm your trade"
+  
+  # Toggle Messages
+  toggle-enabled: "&aTrade requests are now &a&lENABLED&a."
+  toggle-disabled: "&cTrade requests are now &c&lDISABLED&c."
+  target-toggled-off: "&e%player% &chas trading disabled."
+
+# Sounds (use vanilla sound names)
+sounds:
+  request-sent: ENTITY_EXPERIENCE_ORB_PICKUP
+  request-received: BLOCK_NOTE_BLOCK_PLING
+  trade-accepted: ENTITY_PLAYER_LEVELUP
+  trade-denied: ENTITY_VILLAGER_NO
+  trade-complete: ENTITY_PLAYER_LEVELUP
+  trade-cancelled: ENTITY_ITEM_BREAK
+  ready-up: BLOCK_NOTE_BLOCK_CHIME
+  countdown: BLOCK_NOTE_BLOCK_PLING
+
+# Economy Integration (optional)
+economy:
+  enabled: false
+  # Allow trading money
+  allow-money-trade: true
+  # Max money per trade (-1 for unlimited)
+  max-money: 1000000
